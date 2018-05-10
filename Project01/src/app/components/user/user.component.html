@@ -1,0 +1,16 @@
+<h1>Angular Check</h1>
+<!-- <ul>
+  <li>Name : {{this.name}} </li>
+  <li>Age : {{this.age}} </li>
+  <li>Email : {{this.email}} </li>
+</ul>
+<hr>
+<h1>Skills</h1>
+<ul *ngFor="let skill of this.skills; let i = index; ">
+  <li>Skill {{i+1}} : {{skill}}  </li>
+</ul> -->
+<ul *ngFor="let list of this.list">
+  <li style="list-style-type: none"> {{list.username}} </li>
+  <li style="list-style-type: none"> {{list.password}} </li>
+  <hr>
+</ul>
