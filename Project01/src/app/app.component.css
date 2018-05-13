@@ -1,5 +1,5 @@
 .view {
-    background: url("https://mdbootstrap.com/img/Photos/Others/img (50).jpg")no-repeat center center;
+    background-color: #9e9e9e grey;
     background-size: cover;
-    height: 100vh;
+    height: 200vh;
 }
