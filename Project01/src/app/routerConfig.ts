@@ -9,7 +9,11 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 
 export const appRoutes: Routes = [
     {
-        path: 'index',
+        path: '',
+        component: IndexComponent
+    },
+    {
+        path: 'ui-backend',
         component: IndexComponent
     },
     {

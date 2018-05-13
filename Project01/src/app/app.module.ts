@@ -18,6 +18,7 @@ import { IndexComponent } from './components/index/index.component';
 import { PostComponent } from './components/post/post.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { DetailComponent } from './components/detail/detail.component';
+import { UiBackendComponent } from './components/ui-backend/ui-backend.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { DetailComponent } from './components/detail/detail.component';
     IndexComponent,
     PostComponent,
     GalleryComponent,
-    DetailComponent
+    DetailComponent,
+    UiBackendComponent
   ],
   imports: [
     MDBBootstrapModule.forRoot(),

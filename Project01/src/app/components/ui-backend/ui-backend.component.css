@@ -1,0 +1,12 @@
+#always-top{    
+    float:right;
+    position: fixed;
+}
+#navs{
+    float: left;
+
+}
+/* fieldset{
+    border-style: solid;
+    border-size: 2px;
+} */
