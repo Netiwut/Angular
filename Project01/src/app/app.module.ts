@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { UserComponent } from './components/user/user.component';
@@ -11,11 +12,12 @@ import { HttpModule } from '@angular/http';
 
 import { ModelsService} from './services/models.service';
 
-import { } from './routerConfig';
+import { appRoutes } from './routerConfig';
 import { IndexComponent } from './components/index/index.component';
 import { PostComponent } from './components/post/post.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { DetailComponent } from './components/detail/detail.component';
+
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { DetailComponent } from './components/detail/detail.component';
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(appRoutes),
+    NgbModule.forRoot(),
     FormsModule,
     HttpModule
   ],
