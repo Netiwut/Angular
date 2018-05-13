@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -30,6 +31,7 @@ import { DetailComponent } from './components/detail/detail.component';
     DetailComponent
   ],
   imports: [
+    MDBBootstrapModule.forRoot(),
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     NgbModule.forRoot(),
