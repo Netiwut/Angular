@@ -11,12 +11,21 @@ import { HttpModule } from '@angular/http';
 
 import { ModelsService} from './services/models.service';
 
+import { } from './routerConfig';
+import { IndexComponent } from './components/index/index.component';
+import { PostComponent } from './components/post/post.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { DetailComponent } from './components/detail/detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
-    AboutusComponent
+    AboutusComponent,
+    IndexComponent,
+    PostComponent,
+    GalleryComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
