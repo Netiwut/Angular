@@ -1,7 +1,9 @@
 import { Routes } from '@angular/router';
 
+
 import { UserComponent } from './components/user/user.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { UiBackendComponent } from './components/ui-backend/ui-backend.component';
 import { IndexComponent } from './components/index/index.component';
 import { PostComponent } from './components/post/post.component';
 import { DetailComponent } from './components/detail/detail.component';
@@ -14,7 +16,7 @@ export const appRoutes: Routes = [
     },
     {
         path: 'ui-backend',
-        component: IndexComponent
+        component: UiBackendComponent
     },
     {
         path: 'post',
