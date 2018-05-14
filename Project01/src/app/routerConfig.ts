@@ -1,6 +1,9 @@
 import { Routes } from '@angular/router';
 
-
+import { GeneralComponent } from './components/ui-backend/backendComponent/general/general.component'
+// import { GallerySecondComponent } from './components/ui-backend/backendComponent/gallery/gallery.component'
+import { OtopComponent } from './components/ui-backend/backendComponent/otop/otop.component'
+import { PeopleComponent } from './components/ui-backend/backendComponent/people/people.component'
 import { UserComponent } from './components/user/user.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { UiBackendComponent } from './components/ui-backend/ui-backend.component';
@@ -12,11 +15,27 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 export const appRoutes: Routes = [
     {
         path: '',
-        component: IndexComponent
+        component: GeneralComponent
     },
     {
         path: 'ui-backend',
-        component: UiBackendComponent
+        component: GeneralComponent
+    },
+    {
+        path: 'ui-backend/general',
+        component: GeneralComponent
+    },
+    {
+        path: 'ui-backend/people',
+        component: PeopleComponent
+    }, 
+    // {
+    //     path: 'ui-backend/gallery',
+    //     component: GallerySecondComponent
+    // }, 
+    {
+        path: 'ui-backend/otop',
+        component: OtopComponent
     },
     {
         path: 'post',
@@ -38,4 +57,4 @@ export const appRoutes: Routes = [
         path: 'aboutus',
         component: AboutusComponent
     }
-  ];
+];

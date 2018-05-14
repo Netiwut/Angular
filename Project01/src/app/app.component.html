@@ -23,7 +23,36 @@
   </mdb-navbar>
   <!-- Main -->
   <div class="view">
-    <app-ui-backend></app-ui-backend>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-1">
+      </div>
+      <div class="col-2">
+        <links>
+          <div style="text-align: right;" class="navbar-nav">
+            <a class="nav-item nav-link active waves-light" href="ui-backend/general" mdbWavesEffect>ทั่วไป
+              <span class="sr-only">(current)</span>
+            </a>
+            <a class="nav-item nav-link waves-light" href="ui-backend/people" mdbWavesEffect>บุคลากรในหมู่บ้าน</a>
+            <a class="nav-item nav-link waves-light" href="#" mdbWavesEffect>รูปภาพ</a>
+            <a class="nav-item nav-link waves-light" href="ui-backend/otop" mdbWavesEffect>สินค้า OTOP</a>
+          </div>
+        </links>
+      </div>
+      <div class="col-7">
+          <router-outlet></router-outlet>
+
+        <!-- <app-general></app-general> -->
+        <!-- <app-people></app-people>
+        <app-ui-backend></app-ui-backend> -->
+      </div>
+      <div class="col-2">
+      </div>
+
+    </div>
   </div>
   <!-- /.Main -->
 
@@ -33,5 +62,5 @@
   <h1>
     Welcome to {{title}}!!
   </h1>
-  <router-outlet></router-outlet>
 </div>
+

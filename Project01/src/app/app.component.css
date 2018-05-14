@@ -3,3 +3,6 @@
     background-size: cover;
     height: 200vh;
 }
+.navbar-nav{
+    /* position: fixed; */
+}

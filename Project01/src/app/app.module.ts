@@ -19,6 +19,9 @@ import { PostComponent } from './components/post/post.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { UiBackendComponent } from './components/ui-backend/ui-backend.component';
+import { GeneralComponent } from './components/ui-backend/backendComponent/general/general.component';
+import { PeopleComponent } from './components/ui-backend/backendComponent/people/people.component';
+import { OtopComponent } from './components/ui-backend/backendComponent/otop/otop.component';
 
 
 @NgModule({
@@ -30,7 +33,10 @@ import { UiBackendComponent } from './components/ui-backend/ui-backend.component
     PostComponent,
     GalleryComponent,
     DetailComponent,
-    UiBackendComponent
+    UiBackendComponent,
+    GeneralComponent,
+    PeopleComponent,
+    OtopComponent
   ],
   imports: [
     MDBBootstrapModule.forRoot(),
