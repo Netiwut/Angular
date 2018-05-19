@@ -6,9 +6,9 @@
     [attr.role]="isHandset ? 'dialog' : 'navigation'"
     [mode]="(isHandset | async)!.matches ? 'over' : 'side'"
     [opened]="!(isHandset | async)!.matches">
-    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-toolbar color="primary">หมู่บ้านศรีไคออก</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
+      <a mat-list-item href="#">ทั่วไป</a>
       <a mat-list-item href="#">Link 2</a>
       <a mat-list-item href="#">Link 3</a>
     </mat-nav-list>
@@ -23,8 +23,12 @@
         *ngIf="(isHandset | async)!.matches">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Application Title</span>
+      <span><h1>ทั่วไป</h1></span>
     </mat-toolbar>
   </mat-sidenav-content>
-
+  <mat-sidenav-content>
+    <!-- หน้าทั่วไป -->
+    <!-- <app-home></app-home> -->
+    <app-post></app-post>
+  </mat-sidenav-content>
 </mat-sidenav-container>
