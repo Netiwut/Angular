@@ -10,12 +10,14 @@ import { MyNavComponent } from './my-nav/my-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { MyNavbeComponent } from './my-navbe/my-navbe.component';
+import { PeopleComponent } from './components/people/people.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyNavComponent,
-    MyNavbeComponent
+    MyNavbeComponent,
+    PeopleComponent
   ],
   imports: [
     BrowserModule,
