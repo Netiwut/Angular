@@ -1,7 +1,6 @@
 .container {
     text-align: center;
 }
-@charset "UTF-8";
 /*!
  *
  * bttn.css - https://ganapativs.github.io/bttn.css
@@ -172,4 +171,11 @@
 }
 .bttn-stretch.bttn-royal {
   color: #bd2df5;
+}
+.example-icon {
+  padding: 0 14px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
 }
