@@ -18,6 +18,8 @@ import {
   MatCardModule,
   MatMenuModule
 } from '@angular/material';
+import { MatFormFieldModule } from '@angular/material';
+import { MatInputModule } from '@angular/material';
 import { MyNavbeComponent } from './my-navbe/my-navbe.component';
 import { SlideshowModule } from 'ng-simple-slideshow';
 import { DashComponent } from './dash/dash.component';
@@ -49,7 +51,9 @@ import { PostComponent } from './components/post/post.component';
     SlideshowModule,
     MatGridListModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

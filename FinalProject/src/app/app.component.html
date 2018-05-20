@@ -8,14 +8,15 @@
   </form>
 </nav>
 <div style="text-align: center;">
-  <slideshow [imageUrls]="imageUrlArray"></slideshow>
-  <slideshow [height]="height"
-           [minHeight]="'525px'"
-           [autoPlay]="true"
-           [showArrows]="false"
-           [imageUrls]="imageSources"
-           [lazyLoad]="imageSources?.length > 1"
-           [autoPlayWaitForLazyLoad]="true">
-</slideshow>
+  
   <button class="bttn-stretch bttn-md bttn-primary" >INSITE</button>
 </div>
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Favorite food" value="Sushi">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Leave a comment"></textarea>
+  </mat-form-field>
+</form>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'dash',
   templateUrl: './dash.component.html',
   styleUrls: ['./dash.component.css']
