@@ -26,6 +26,12 @@ import { DashComponent } from './dash/dash.component';
 import { PeopleComponent } from './components/people/people.component';
 import { HomeComponent } from './components/home/home.component';
 import { PostComponent } from './components/post/post.component';
+import { MatDatepickerModule, MatNativeDateModule,MatTableModule  } from '@angular/material';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -53,7 +59,12 @@ import { PostComponent } from './components/post/post.component';
     MatCardModule,
     MatMenuModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
