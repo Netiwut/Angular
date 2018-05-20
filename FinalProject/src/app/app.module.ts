@@ -21,12 +21,19 @@ import {
 import { MyNavbeComponent } from './my-navbe/my-navbe.component';
 import { SlideshowModule } from 'ng-simple-slideshow';
 import { DashComponent } from './dash/dash.component';
+import { PeopleComponent } from './components/people/people.component';
+import { HomeComponent } from './components/home/home.component';
+import { PostComponent } from './components/post/post.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     MyNavComponent,
     MyNavbeComponent,
-    DashComponent
+    DashComponent,
+    PeopleComponent,
+    HomeComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,

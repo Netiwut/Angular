@@ -1,0 +1,10 @@
+table{
+    width: 100%;
+}
+table, th , td{
+    border-style: solid;
+    
+}
+#table-size{
+    height: 500px;
+}
