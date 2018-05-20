@@ -1,3 +1,4 @@
+<dash></dash>
 <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand" href="#">Navbar</a>
   <form class="form-inline">
@@ -7,6 +8,14 @@
   </form>
 </nav>
 <div style="text-align: center;">
-  
-  <button class="bttn-stretch bttn-md bttn-primary" >medium</button>
+  <slideshow [imageUrls]="imageUrlArray"></slideshow>
+  <slideshow [height]="height"
+           [minHeight]="'525px'"
+           [autoPlay]="true"
+           [showArrows]="false"
+           [imageUrls]="imageSources"
+           [lazyLoad]="imageSources?.length > 1"
+           [autoPlayWaitForLazyLoad]="true">
+</slideshow>
+  <button class="bttn-stretch bttn-md bttn-primary" >INSITE</button>
 </div>
