@@ -5,9 +5,11 @@
     <mat-nav-list>
       <a mat-list-item href="" routerLink='/mynav/home'>ทั่วไป</a>
       <a mat-list-item href="" routerLink='/mynav/post'>กิจกรรม/โพสต์</a>
-      <a mat-menu-item herf [matMenuTriggerFor]="menu">แกลอรี่</a>
-      <mat-menu #menu="matMenu">
-        <a mat-menu-item routerLink="/mynav/gallery">แกลอรี่ 1</a>
+      <a mat-menu-item herf [matMenuTriggerFor]="menu">แกลอรี่
+        <i class="fas fa-angle-down" style="float: right; margin-top: 17px"></i>
+      </a>
+      <mat-menu #menu="matMenu" class="my-menu" >
+        <a mat-menu-item routerLink="/mynav/gallery" >แกลอรี่ 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
         <a mat-menu-item>แกลอรี่ 2</a>
       </mat-menu>
       <a mat-list-item href="" routerLink='/mynav/people'>องค์กรในหมู่บ้าน</a>
