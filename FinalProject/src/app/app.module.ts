@@ -27,13 +27,15 @@ import { PeopleComponent } from './components/people/people.component';
 import { HomeComponent } from './components/home/home.component';
 import { PostComponent } from './components/post/post.component';
 import { MatDatepickerModule, MatNativeDateModule, MatTableModule  } from '@angular/material';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IndexComponent } from './components/index/index.component';
 import { Routes, RouterModule} from '@angular/router';
 import { CardComponent } from './components/sub-components/card/card.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { GalleryAlbumComponent } from './components/sub-components/gallery-album/gallery-album.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PhotoAllComponent } from './components/gallery/photo-all/photo-all.component';
+
 
 const appRoutes = [
   {
@@ -47,12 +49,26 @@ const appRoutes = [
       {
         path: '',
         component: HomeComponent
+      }, {
+        path: 'post',
+        component: PostComponent
+      }, {
+        path: 'gallery',
+        component: GalleryComponent
+      },
+      {
+        path: 'photoall',
+        component: PhotoAllComponent
+      },
+      {
+        path: 'home',
+        component: HomeComponent
+      },
+      {
+        path: 'people',
+        component: PeopleComponent
       }
     ]
-  },
-  {
-    path: 'home',
-    component: HomeComponent
   }
 ];
 
@@ -69,7 +85,8 @@ const appRoutes = [
     GalleryComponent,
     GalleryAlbumComponent,
     IndexComponent,
-    CardComponent
+    CardComponent,
+    PhotoAllComponent
   ],
   imports: [
     BrowserModule,
