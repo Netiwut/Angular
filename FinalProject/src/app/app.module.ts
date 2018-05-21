@@ -57,7 +57,7 @@ const appRoutes = [
         component: GalleryComponent
       },
       {
-        path: 'photoall',
+        path: 'photoall/:id',
         component: PhotoAllComponent
       },
       {
