@@ -28,6 +28,7 @@ import { HomeComponent } from './components/home/home.component';
 import { PostComponent } from './components/post/post.component';
 import { MatDatepickerModule, MatNativeDateModule,MatTableModule  } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { CardComponent } from './components/sub-components/card/card.component';
 
 
 
@@ -41,7 +42,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     DashComponent,
     PeopleComponent,
     HomeComponent,
-    PostComponent
+    PostComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
