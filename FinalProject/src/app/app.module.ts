@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
+
 import { AppComponent } from './app.component';
 import { SidebarModule } from 'ng-sidebar';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -31,12 +32,33 @@ import { DashComponent } from './dash/dash.component';
 import { PeopleComponent } from './components/people/people.component';
 import { HomeComponent } from './components/home/home.component';
 import { PostComponent } from './components/post/post.component';
-import { MatDatepickerModule, MatNativeDateModule,MatTableModule  } from '@angular/material';
+import { MatDatepickerModule, MatNativeDateModule, MatTableModule  } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { IndexComponent } from './components/index/index.component';
+import { Routes, RouterModule} from '@angular/router';
+import { CardComponent } from './components/sub-components/card/card.component';
 
 
-
-
+const appRoutes = [
+  {
+    path: '',
+    component: IndexComponent
+  },
+  {
+    path: 'mynav',
+    component: MyNavComponent,
+    children: [
+      {
+        path: '',
+        component: HomeComponent
+      }
+    ]
+  },
+  {
+    path: 'home',
+    component: HomeComponent
+  }
+];
 
 @NgModule({
   declarations: [
@@ -46,7 +68,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     DashComponent,
     PeopleComponent,
     HomeComponent,
-    PostComponent
+    PostComponent,
+    IndexComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
@@ -71,10 +95,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     ReactiveFormsModule,
     MatTableModule,
     MatSelectModule,
-   
-    MatMenuModule
-
-    
+    MatMenuModule,
+    RouterModule.forRoot(appRoutes, {
+      enableTracing: true
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
