@@ -8,6 +8,9 @@
       <a mat-list-item href="#gallery">รูปภาพ</a>
       <a mat-list-item href="#people">องกรณ์</a>
 
+      <a mat-list-item href="#" routerLink='/mynav/home'>ทั่วไป</a>
+      <a mat-list-item href="#">กิจกรรม/โพสต์</a>
+      <a mat-list-item href="#">Link 3</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -21,9 +24,11 @@
     </mat-toolbar>
   </mat-sidenav-content>
   <mat-sidenav-content>
+    <router-outlet></router-outlet>
     <!-- หน้าทั่วไป -->
     <!-- <app-home></app-home> -->
     <!-- <app-post></app-post> -->
+<<<<<<< HEAD
     <div class="container">
       <br>
       <div class="row">
@@ -33,5 +38,7 @@
       </div>
     </div>
 
+=======
+>>>>>>> a198b0b15069a3fa88841ee730442c9cff6f7b68
   </mat-sidenav-content>
 </mat-sidenav-container>

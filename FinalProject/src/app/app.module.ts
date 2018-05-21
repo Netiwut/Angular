@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
@@ -26,15 +26,35 @@ import { DashComponent } from './dash/dash.component';
 import { PeopleComponent } from './components/people/people.component';
 import { HomeComponent } from './components/home/home.component';
 import { PostComponent } from './components/post/post.component';
-import { MatDatepickerModule, MatNativeDateModule,MatTableModule  } from '@angular/material';
+import { MatDatepickerModule, MatNativeDateModule, MatTableModule  } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { IndexComponent } from './components/index/index.component';
+import { Routes, RouterModule} from '@angular/router';
 import { CardComponent } from './components/sub-components/card/card.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { GalleryAlbumComponent } from './components/sub-components/gallery-album/gallery-album.component';
 
 
-
-
+const appRoutes = [
+  {
+    path: '',
+    component: IndexComponent
+  },
+  {
+    path: 'mynav',
+    component: MyNavComponent,
+    children: [
+      {
+        path: '',
+        component: HomeComponent
+      }
+    ]
+  },
+  {
+    path: 'home',
+    component: HomeComponent
+  }
+];
 
 @NgModule({
   declarations: [
@@ -47,7 +67,9 @@ import { GalleryAlbumComponent } from './components/sub-components/gallery-album
     PostComponent,
     CardComponent,
     GalleryComponent,
-    GalleryAlbumComponent
+    GalleryAlbumComponent,
+    IndexComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +92,10 @@ import { GalleryAlbumComponent } from './components/sub-components/gallery-album
     MatNativeDateModule,
     FormsModule,
     ReactiveFormsModule,
-    MatTableModule
+    MatTableModule,
+    RouterModule.forRoot(appRoutes, {
+      enableTracing: true
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
