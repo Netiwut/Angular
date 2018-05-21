@@ -37,6 +37,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { IndexComponent } from './components/index/index.component';
 import { Routes, RouterModule} from '@angular/router';
 import { CardComponent } from './components/sub-components/card/card.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { GalleryAlbumComponent } from './components/sub-components/gallery-album/gallery-album.component';
 
 
 const appRoutes = [
@@ -69,6 +71,9 @@ const appRoutes = [
     PeopleComponent,
     HomeComponent,
     PostComponent,
+    CardComponent,
+    GalleryComponent,
+    GalleryAlbumComponent,
     IndexComponent,
     CardComponent
   ],
