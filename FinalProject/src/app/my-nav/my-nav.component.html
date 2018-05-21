@@ -4,14 +4,13 @@
     <mat-toolbar color="accent">หมู่บ้านศรีไคออก</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item href="" routerLink='/mynav/home'>ทั่วไป</a>
-      <a mat-list-item href="">กิจกรรม/โพสต์</a>
-      <a mat-menu-item herf [matMenuTriggerFor]="menu">แกลอรี่ </a>
-        <mat-menu #menu="matMenu">
-          <a mat-menu-item>แกลอรี่ 1 </a>
-          <a mat-menu-item>แกลอรี่ 2</a>
-        </mat-menu>
-      <a mat-list-item href="">องค์กรในหมู่บ้าน</a>
-      <a mat-list-item href="">กิจกรรม/โพสต์</a>
+      <a mat-list-item href="" routerLink='/mynav/post'>กิจกรรม/โพสต์</a>
+      <a mat-menu-item herf [matMenuTriggerFor]="menu">แกลอรี่</a>
+      <mat-menu #menu="matMenu">
+        <a mat-menu-item routerLink="/mynav/gallery">แกลอรี่ 1</a>
+        <a mat-menu-item>แกลอรี่ 2</a>
+      </mat-menu>
+      <a mat-list-item href="" routerLink='/mynav/people'>องค์กรในหมู่บ้าน</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -25,19 +24,8 @@
     </mat-toolbar>
   </mat-sidenav-content>
   <mat-sidenav-content>
-    <router-outlet></router-outlet>
-    <!-- หน้าทั่วไป -->
-    <!-- <app-home></app-home> -->
-    <!-- <app-post></app-post> -->
-    <app-people>
-    </app-people>
-    <div class="container">
-      <br>
-      <div class="row">
-        <div class="col-10">
-          <app-gallery></app-gallery>
-        </div>
-      </div>
-    </div>
+      <router-outlet></router-outlet>
+
+      <!-- <app-gallery></app-gallery> -->
   </mat-sidenav-content>
 </mat-sidenav-container>

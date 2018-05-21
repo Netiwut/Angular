@@ -1,29 +1,37 @@
-<h1>รูปภาพ</h1>
-<hr>
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-10">
+      <h1>รูปภาพ</h1>
+      <hr>
 
-<mat-grid-list cols="4" >
-   <mat-grid-tile ><a href=""><app-gallery-album style="margin:5px"></app-gallery-album></a></mat-grid-tile> 
-   <mat-grid-tile ><a href=""><app-gallery-album style="margin:5px"></app-gallery-album></a></mat-grid-tile> 
-   <mat-grid-tile ><a href=""><app-gallery-album style="margin:5px"></app-gallery-album></a></mat-grid-tile> 
-   <mat-grid-tile ><a href=""><app-gallery-album style="margin:5px"></app-gallery-album></a></mat-grid-tile> 
-   <mat-grid-tile ><a href=""><app-gallery-album style="margin:5px"></app-gallery-album></a></mat-grid-tile> 
-   <mat-grid-tile ><a href=""><app-gallery-album style="margin:5px"></app-gallery-album></a></mat-grid-tile> 
-   <mat-grid-tile ><a href=""><app-gallery-album style="margin:5px"></app-gallery-album></a></mat-grid-tile> 
-   <mat-grid-tile ><a href=""><app-gallery-album style="margin:5px"></app-gallery-album></a></mat-grid-tile> 
-   <mat-grid-tile ><a href=""><app-gallery-album style="margin:5px"></app-gallery-album></a></mat-grid-tile> 
-   <mat-grid-tile ><a href=""><app-gallery-album style="margin:5px"></app-gallery-album></a></mat-grid-tile> 
-   <mat-grid-tile ><a href=""><app-gallery-album style="margin:5px"></app-gallery-album></a></mat-grid-tile> 
+      <mat-grid-list cols="4">
+        
 
-</mat-grid-list>
-
-<br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
+        <div *ngFor="let pic of pics;let i = index">
+          <mat-grid-tile>
+            <mat-card>
+              <h6>{{pic.albumname}}</h6>
+              <a routerLink='/mynav/photoall'>
+                <img class="img-fluid img-thumbnail" src="{{pic.url}}"
+                  alt="" width='150px'>
+              </a>
+            </mat-card>
+          </mat-grid-tile>
+        </div>
+      </mat-grid-list>
     
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+    </div>
+  </div>
+</div>
