@@ -29,6 +29,8 @@ import { PostComponent } from './components/post/post.component';
 import { MatDatepickerModule, MatNativeDateModule,MatTableModule  } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CardComponent } from './components/sub-components/card/card.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { GalleryAlbumComponent } from './components/sub-components/gallery-album/gallery-album.component';
 
 
 
@@ -43,7 +45,9 @@ import { CardComponent } from './components/sub-components/card/card.component';
     PeopleComponent,
     HomeComponent,
     PostComponent,
-    CardComponent
+    CardComponent,
+    GalleryComponent,
+    GalleryAlbumComponent
   ],
   imports: [
     BrowserModule,
