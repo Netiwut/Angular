@@ -1,0 +1,6 @@
+a:hover ,a:visited{
+  padding: 10px;
+  text-decoration: none;
+
+  box-shadow: 5px 10px 8px 10px #888888;
+}

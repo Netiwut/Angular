@@ -2,13 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 
 import { AppComponent } from './app.component';
-
 import { SidebarModule } from 'ng-sidebar';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyNavComponent } from './my-nav/my-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
+
+
 import {
+  
   MatToolbarModule,
   MatButtonModule,
   MatSidenavModule,
@@ -16,7 +18,11 @@ import {
   MatListModule,
   MatGridListModule,
   MatCardModule,
-  MatMenuModule
+  MatSelectModule,
+  MatMenuModule,
+  MatOption
+  
+
 } from '@angular/material';
 import { MatFormFieldModule } from '@angular/material';
 import { MatInputModule } from '@angular/material';
@@ -31,6 +37,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { IndexComponent } from './components/index/index.component';
 import { Routes, RouterModule} from '@angular/router';
 import { CardComponent } from './components/sub-components/card/card.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { GalleryAlbumComponent } from './components/sub-components/gallery-album/gallery-album.component';
 
 
 const appRoutes = [
@@ -63,6 +71,9 @@ const appRoutes = [
     PeopleComponent,
     HomeComponent,
     PostComponent,
+    CardComponent,
+    GalleryComponent,
+    GalleryAlbumComponent,
     IndexComponent,
     CardComponent
   ],
@@ -88,6 +99,8 @@ const appRoutes = [
     FormsModule,
     ReactiveFormsModule,
     MatTableModule,
+    MatSelectModule,
+    MatMenuModule,
     RouterModule.forRoot(appRoutes, {
       enableTracing: true
     })
