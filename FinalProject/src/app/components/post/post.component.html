@@ -1,5 +1,7 @@
 <head>
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -56,76 +58,12 @@
 
         <div class="row">
           <div class="col-6">
-            <mat-card>
-              <h1>โพสต์</h1>
-              <form class="example-form">
-                <mat-form-field class="example-full-width">
-                  <input matInput placeholder="หัวข้อโพสต์" value="">
-                </mat-form-field>
+            <app-card></app-card>
 
-                <!-- วันที่กิจโพสต์ -->
-                <mat-form-field>
-
-                  <input matInput [matDatepicker]="picker1" placeholder="วันที่โพสต์" [formControl]="date" disabled>
-                  <!-- <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle> -->
-                  <mat-datepicker #picker1></mat-datepicker>
-                </mat-form-field>
-                <!-- วันที่กิจกรรม -->
-                <span> &nbsp;</span>
-                <mat-form-field>
-                  <input matInput [matDatepicker]="picker" placeholder="วันที่กิจกรรม">
-                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                  <mat-datepicker #picker></mat-datepicker>
-                </mat-form-field>
-
-                <br>
-                <div>
-                  <mat-form-field class="example-full-width">
-                    <textarea matInput placeholder="รายละเอียดโพส"></textarea>
-                  </mat-form-field>
-                </div>
-
-                <div class="button-row">
-                  <button mat-raised-button color="accent">like</button>
-                </div>
-              </form>
-            </mat-card>
           </div>
           <div class="col-6">
-            <mat-card>
-              <h1>โพสต์</h1>
-              <form class="example-form">
-                <mat-form-field class="example-full-width">
-                  <input matInput placeholder="หัวข้อโพสต์" value="">
-                </mat-form-field>
+            <app-card></app-card>
 
-                <!-- วันที่กิจโพสต์ -->
-                <mat-form-field>
-
-                  <input matInput [matDatepicker]="picker2" placeholder="วันที่โพสต์" [formControl]="date" disabled>
-                  <!-- <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle> -->
-                  <mat-datepicker #picker1></mat-datepicker>
-                </mat-form-field>
-                <!-- วันที่กิจกรรม -->
-                <span> &nbsp;</span>
-                <mat-form-field>
-                  <input matInput [matDatepicker]="picker2" placeholder="วันที่กิจกรรม">
-                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                  <mat-datepicker #picker></mat-datepicker>
-                </mat-form-field>
-
-                <br>
-                <div>
-                  <mat-form-field class="example-full-width">
-                    <textarea matInput placeholder="รายละเอียดโพส"></textarea>
-                  </mat-form-field>
-                </div>
-
-                <div class="button-row">
-                  <button mat-raised-button color="accent">like</button>
-                </div>
-              </form>
-            </mat-card>
           </div>
         </div>
         <!-- row -->

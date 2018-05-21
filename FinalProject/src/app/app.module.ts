@@ -30,6 +30,7 @@ import { MatDatepickerModule, MatNativeDateModule, MatTableModule  } from '@angu
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { IndexComponent } from './components/index/index.component';
 import { Routes, RouterModule} from '@angular/router';
+import { CardComponent } from './components/sub-components/card/card.component';
 
 
 const appRoutes = [
@@ -62,7 +63,8 @@ const appRoutes = [
     PeopleComponent,
     HomeComponent,
     PostComponent,
-    IndexComponent
+    IndexComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
