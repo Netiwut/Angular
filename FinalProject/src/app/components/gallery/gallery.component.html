@@ -12,7 +12,7 @@
           <mat-grid-tile>
             <mat-card>
               <h6>{{pic.albumname}}</h6>
-              <a routerLink='/mynav/photoall'>
+              <a [routerLink]="['/mynav/photoall/', i]">
                 <img class="img-fluid img-thumbnail" src="{{pic.url}}"
                   alt="" width='150px'>
               </a>
