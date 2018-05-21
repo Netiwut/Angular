@@ -33,7 +33,7 @@ import { Routes, RouterModule} from '@angular/router';
 import { CardComponent } from './components/sub-components/card/card.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { GalleryAlbumComponent } from './components/sub-components/gallery-album/gallery-album.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes = [
   {
@@ -97,7 +97,8 @@ const appRoutes = [
     MatMenuModule,
     RouterModule.forRoot(appRoutes, {
       enableTracing: true
-    })
+    }),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
