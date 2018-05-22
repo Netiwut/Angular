@@ -1,5 +1,6 @@
 <head>
 </head>
+
 <body>
   <div class="container">
     <div class="row">
@@ -7,13 +8,26 @@
         <H1> องค์กร </H1>
         <hr>
         <mat-form-field>
-          <mat-select placeholder="เลือกองค์กร">
-            <mat-option *ngFor="let groups of group" [value]="groups.value">
-              {{ groups.viewValue }}
+          <mat-select placeholder="เลือกองค์กร" [(value)]="selected">
+            <mat-option *ngFor="let peo of people" [value]="peo.id">
+              {{peo.name}}
             </mat-option>
           </mat-select>
-          <img src="http://www.wichitsongkram.ac.th/wp-content/uploads/2017/06/%E0%B8%97%E0%B8%B3%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%9A%E0%B8%84%E0%B8%A3%E0%B8%B9%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%9A%E0%B8%B8%E0%B8%84%E0%B8%A5%E0%B8%B2%E0%B8%81%E0%B8%A3%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A8%E0%B8%B6%E0%B8%81%E0%B8%A9%E0%B8%B2.jpg" alt="">
+
         </mat-form-field>
+        <br>  
+
+        <table class="table">
+          <tr>
+            <th width="50%">ชื่อ-สกุล</th>
+            <th width="50%">ตำแหน่ง</th>
+          </tr>
+          <tr *ngFor="let peo of people[selected]?.member">
+            <td width="50%">{{peo.name}}</td>
+            <td width="50%">{{peo.position}}</td>
+          </tr>
+          
+        </table>
       </div>
     </div>
   </div>
