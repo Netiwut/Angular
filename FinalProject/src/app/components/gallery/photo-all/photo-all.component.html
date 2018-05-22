@@ -7,11 +7,8 @@
         <h1> <a href="" routerLink="/mynav/gallery"> <img id="linkPrevious" src="https://cdn4.iconfinder.com/data/icons/flat-black/512/prev.png" alt="" width="40px"></a>รูปภาพ</h1>
       <hr>
       <br>
-      <mat-grid-list cols="4">
-
-        <mat-grid-tile > <mat-card> <h6>wow</h6> <a routerLink="/mynav/gallery"><img class="img-fluid img-thumbnail" src="http://www.hunterhayes.com/sites/g/files/g2000006191/f/Sample-image10-highres.jpg" alt=""></a></mat-card></mat-grid-tile> 
-        <mat-grid-tile > <mat-card> <h6>wow</h6> <a routerLink="/mynav/gallery"><img class="img-fluid img-thumbnail" src="http://www.hunterhayes.com/sites/g/files/g2000006191/f/Sample-image10-highres.jpg" alt=""></a></mat-card></mat-grid-tile> 
-
+      <mat-grid-list cols="4" *ngFor="let image of gallery?.images">
+          <mat-grid-tile > <mat-card> <h6>wow</h6> <a routerLink="/mynav/gallery"><img class="img-fluid img-thumbnail" src="{{image.url}}" alt=""></a></mat-card></mat-grid-tile>  
       </mat-grid-list>
 
       <br>

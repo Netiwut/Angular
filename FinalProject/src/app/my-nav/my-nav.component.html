@@ -3,16 +3,10 @@
     [opened]="!(isHandset | async)!.matches">
     <mat-toolbar color="accent">หมู่บ้านศรีไคออก</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="" routerLink='/mynav/home'>ทั่วไป</a>
-      <a mat-list-item href="" routerLink='/mynav/post'>กิจกรรม/โพสต์</a>
-      <a mat-menu-item herf [matMenuTriggerFor]="menu">แกลอรี่
-        <i class="fas fa-angle-down" style="float: right; margin-top: 17px"></i>
-      </a>
-      <mat-menu #menu="matMenu" class="my-menu" >
-        <a mat-menu-item routerLink="/mynav/gallery" >แกลอรี่ 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
-        <a mat-menu-item>แกลอรี่ 2</a>
-      </mat-menu>
-      <a mat-list-item href="" routerLink='/mynav/people'>องค์กรในหมู่บ้าน</a>
+      <a mat-list-item href="" routerLink='/mynav/home'><i class="fas fa-home"></i>&nbsp;&nbsp;ทั่วไป</a>
+      <a mat-list-item href="" routerLink='/mynav/post'><i class="fas fa-bullhorn"></i>&nbsp;&nbsp;กิจกรรม/โพสต์</a>
+      <a mat-list-item herf="" routerLink="/mynav/gallery"><i class="far fa-images"></i>&nbsp;&nbsp;แกลอรี่</a>
+      <a mat-list-item href="" routerLink='/mynav/people'><i class="fas fa-users"></i>&nbsp;&nbsp;องค์กรในหมู่บ้าน</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

@@ -4,23 +4,19 @@
     <div class="col-10">
       <h1>รูปภาพ</h1>
       <hr>
-
       <mat-grid-list cols="4">
-        
-
-        <div *ngFor="let pic of pics;let i = index">
+        <div *ngFor="let gall of gallery">
           <mat-grid-tile>
             <mat-card>
-              <h6>{{pic.albumname}}</h6>
-              <a [routerLink]="['/mynav/photoall/', i]">
-                <img class="img-fluid img-thumbnail" src="{{pic.url}}"
+              <h6>{{gall.name}}</h6>
+              <a [routerLink]="['/mynav/photoall/', gall.id]">
+                <img class="img-fluid img-thumbnail" src={{gall.images[0].url}}
                   alt="" width='150px'>
               </a>
             </mat-card>
           </mat-grid-tile>
         </div>
       </mat-grid-list>
-    
       <br>
       <br>
       <br>
@@ -30,8 +26,6 @@
       <br>
       <br>
       <br>
-
-
     </div>
   </div>
 </div>
