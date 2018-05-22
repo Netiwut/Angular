@@ -1,27 +1,31 @@
 <div class="container">
   <br>
-  <p></p>
-  <div class="row">
-    <div class="col-10">
-        
-        <h1> <a href="" routerLink="/mynav/gallery"> <img id="linkPrevious" src="https://cdn4.iconfinder.com/data/icons/flat-black/512/prev.png" alt="" width="40px"></a>รูปภาพ</h1>
-      <hr>
-      <br>
-      <mat-grid-list cols="4" *ngFor="let image of gallery?.images">
-          <mat-grid-tile > <mat-card> <h6>wow</h6> <a routerLink="/mynav/gallery"><img class="img-fluid img-thumbnail" src="{{image.url}}" alt=""></a></mat-card></mat-grid-tile>  
-      </mat-grid-list>
-
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-
-
-    </div>
+  <h1>
+    <a href="" routerLink="/mynav/gallery">
+      <img id="linkPrevious" src="https://cdn4.iconfinder.com/data/icons/flat-black/512/prev.png" alt="" width="40px">
+    </a>
+    รูปภาพ
+  </h1>
+  <div class="row" >
+      <div class="col-3" *ngFor="let image of gallery?.images">
+        <ng-template #content let-c="close" let-d="dismiss">
+          <div class="modal-header">
+            <h4 class="modal-title">{{this.gallery.name}}</h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" style="text-align: center">
+            <img src="{{image.url}}" style="max-width: 100%;" alt="Pic">
+          </div>
+          <div class="modal-footer"></div>
+        </ng-template>
+            <button 
+            class="btn btn-outline-info mb-2 mr-2" 
+            (click)="openLg(content)">
+              <img class="img-fluid img-thumbnail" src="{{image.url}}" alt="">
+            </button>
+      </div>
   </div>
 </div>
+
