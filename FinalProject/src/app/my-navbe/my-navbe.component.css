@@ -1,7 +1,9 @@
 .sidenav-container {
   height: 100%;
 }
-
+.mr {
+  margin-right: 50%;
+}
 .sidenav {
   width: 200px;
   box-shadow: 3px 0 6px rgba(0,0,0,.24);
@@ -10,4 +12,18 @@
 }
 a {
   text-decoration: none;
+}
+.bgfull {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 800px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
 }

@@ -1,59 +1,110 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav
-    #drawer
-    class="sidenav"
-    fixedInViewport="true"
-    [attr.role]="isHandset ? 'dialog' : 'navigation'"
-    [mode]="(isHandset | async)!.matches ? 'over' : 'side'"
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true" [attr.role]="isHandset ? 'dialog' : 'navigation'" [mode]="(isHandset | async)!.matches ? 'over' : 'side'"
     [opened]="!(isHandset | async)!.matches">
-    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-toolbar style="background-color: teal; color: white">บ้านศรีไคออก</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink='/' >กลับสู่หน้าหลัก</a>
-      <a mat-list-item routerLink='/mynav' >เข้าสู้หน้าหลัก</a>
+      <a mat-list-item routerLink='/'>กลับสู่หน้าหลัก</a>
+      <a mat-list-item routerLink='/mynav'>เข้าสู้หน้าหลัก</a>
       <hr>
-      <a mat-list-item  (click)="acc.toggle('toggle-1')">ข้อมูลทั่วไป</a>
-      <a mat-list-item  (click)="acc.toggle('toggle-2')">กิจกรรมและโพส</a>
-      <a mat-list-item  (click)="acc.toggle('toggle-3')">ประมวลภาพ</a>
-      <a mat-list-item  (click)="acc.toggle('toggle-4')">องค์กรในหมู่บ้าน </a>
-
+      <a mat-list-item (click)="acc.toggle('toggle-1')">ข้อมูลทั่วไป</a>
+      <a mat-list-item (click)="acc.toggle('toggle-2')">กิจกรรมและโพส</a>
+      <a mat-list-item (click)="acc.toggle('toggle-3')">ประมวลภาพ</a>
+      <a mat-list-item (click)="acc.toggle('toggle-4')">องค์กรในหมู่บ้าน </a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="(isHandset | async)!.matches">
+    <mat-toolbar style="background-color: rgb(34, 34, 34); color: white">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="(isHandset | async)!.matches">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Application Title</span>
+      <span style="width: 100%;text-align: center">ข้อมูลทั้งหมด</span>
     </mat-toolbar>
   </mat-sidenav-content>
-  <mat-sidenav-content>
-      <ngb-accordion #acc="ngbAccordion">
-          <ngb-panel id="toggle-1" title="ข้อมูลทั่วไป">
-            <ng-template ngbPanelContent>
+  
+  <mat-sidenav-content class="bgfull container" style="padding-right: 13%; padding-top: 1%">
+    <ngb-accordion #acc="ngbAccordion">
+      <ngb-panel id="toggle-1" title="ข้อมูลทั่วไป">
+        <ng-template ngbPanelContent>
+          <form class="example-form">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="ชื่อหมู่บ้าน" value=" {{general.name}} ">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="ชื่อผู้ใหญ่บ้าน" value=" {{general.namehead}} ">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="รูปภาพ" value=" {{general.image}} ">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <textarea rows="15" matInput placeholder="ประวัติหมู่บ้าน" value=" {{general.history}} "></textarea>
+            </mat-form-field>
+            <button mat-button style="color: rgb(0, 119, 73)" type="submit">Save</button>
+            <button mat-button style="color: rgb(226, 26, 0)" type="submit">Cancel</button>
+          </form>
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel id="toggle-2" title="กิจกรรมโพส">
+        <ng-template ngbPanelContent>
+            <form class="example-form">
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="ชื่อกิจกรรม หรือ โพส" value="">
+                </mat-form-field>
+                <!-- <mat-form-field class="example-full-width">
+                  <input matInput placeholder="เวลา" value="">
+                </mat-form-field> -->
+                <mat-form-field>
+                  <input matInput [matDatepicker]="picker1" placeholder="Angular forms" [formControl]="date">
+                  <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                  <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="รูปภาพ" value="">
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                  <textarea matInput placeholder="รายละเอียด"></textarea>
+                </mat-form-field>
+                <button mat-button style="color: rgb(0, 119, 73)" type="submit">Save</button>
+                <button mat-button style="color: rgb(226, 26, 0)" type="submit">Cancel</button>
+              </form>
+              <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">ชื่อกิจกรรม</th>
+                      <th scope="col">วันที่</th>
+                      <th scope="col">รายละเอียด</th>
+                      <th scope="col">รูปภาพ</th>
+                      <th scope="col">แก้ไข / ลบ</th>
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let post of this.postit;let i = index">
+                    <tr>  
+                      <th scope="row"> {{i+1}} </th>
+                      <td> {{post.name}} </td>
+                      <td> {{post.timestamp}} </td>
+                      <td> {{post.detail}} </td>
+                      <td> {{post.url}} </td>
+                      <td  style="width: 10%;text-align: center"> 
+                        <a href=""><i class="fas fa-edit" style="color: goldenrod">&nbsp;</i></a>
+                        <a href=""><i class="fas fa-trash-alt" style="color: orangered"></i></a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel id="toggle-3" title="ประมวลภาพ">
+        <ng-template ngbPanelContent>
 
-            </ng-template>
-          </ngb-panel>
-          <ngb-panel id="toggle-2" title="กิจกรรมโพส">
-            <ng-template ngbPanelContent>
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel id="toggle-4" title="องค์กรในหมู่บ้าน">
+        <ng-template ngbPanelContent>
 
-            </ng-template>
-          </ngb-panel>
-          <ngb-panel id="toggle-3" title="ประมวลภาพ">
-            <ng-template ngbPanelContent>
-
-            </ng-template>
-          </ngb-panel>
-          <ngb-panel id="toggle-4" title="องค์กรในหมู่บ้าน">
-            <ng-template ngbPanelContent>
-
-            </ng-template>
-          </ngb-panel>
-        </ngb-accordion>
-        <hr/>  
-      </mat-sidenav-content>
+        </ng-template>
+      </ngb-panel>
+    </ngb-accordion>
+    <hr/>
+  </mat-sidenav-content>
 </mat-sidenav-container>
+

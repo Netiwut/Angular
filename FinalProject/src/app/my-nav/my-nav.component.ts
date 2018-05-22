@@ -11,4 +11,8 @@ import { Observable } from 'rxjs';
 export class MyNavComponent {
   isHandset: Observable<BreakpointState> = this.breakpointObserver.observe(Breakpoints.Handset);
   constructor(private breakpointObserver: BreakpointObserver) {}
+  values = 'หน้าหลัก';
+  onClick(value: string) {
+    this.values = value ;
+  }
 }
