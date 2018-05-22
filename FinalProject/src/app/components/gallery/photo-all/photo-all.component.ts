@@ -4,6 +4,7 @@ import { Gallery, General } from './../../../models/models';
 import { ActivatedRoute } from '@angular/router';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
+
 @Component({
   selector: 'app-photo-all',
   templateUrl: './photo-all.component.html',
@@ -22,6 +23,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
   `]
 })
 export class PhotoAllComponent implements OnInit {
+
   id: any;
   gallery: Gallery;
   closeResult: string;

@@ -12,62 +12,58 @@
         <mat-card>
           <h1>ตารางกิจกรรม</h1>
 
-          <div class="example-container mat-elevation-z8">
-            <div class="example-header">
-              <mat-form-field>
-                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="กรองข้อมูล">
-              </mat-form-field>
-            </div>
+          <table class="" width="100%">
+            <tr>
+              <th width="60%">กิจกรรม</th>
+              <th width="20%">เวลากิจกรรม</th>
+              <th width="20%">รายละเอียด</th>
+            </tr>
+            <tr *ngFor="let index of postit">
+              <td>
+                {{index.name}}
+              </td>
+              <td>
+                {{index.timestamp}}
+              </td>
+              <td>
+                <a href="">
+                  <!-- {{index.detail}} -->
+                  รายละเอียด
+                </a>
+              </td>
+            </tr>
+          </table>
 
-            <table mat-table #table [dataSource]="dataSource">
-
-              <!-- Position Column -->
-              <ng-container matColumnDef="position">
-                <th mat-header-cell *matHeaderCellDef> เลขที่ </th>
-                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-              </ng-container>
-
-              <!-- Name Column -->
-              <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef> ชื่อกิจกรรม </th>
-                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-              </ng-container>
-
-              <!-- Weight Column -->
-              <ng-container matColumnDef="weight">
-                <th mat-header-cell *matHeaderCellDef> วันที่โพสต์ </th>
-                <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-              </ng-container>
-
-              <!-- Symbol Column -->
-              <ng-container matColumnDef="symbol">
-                <th mat-header-cell *matHeaderCellDef> วันที่กิจกรรม </th>
-                <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-              </ng-container>
-
-              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-            </table>
-          </div>
         </mat-card>
-        <!-- Copyright 2018 Google Inc. All Rights Reserved.
-        Use of this source code is governed by an MIT-style license that
-        can be found in the LICENSE file at http://angular.io/license -->
 
         <hr>
 
-        <div class="row">
-          <div class="col-6">
-            <app-card></app-card>
-
-          </div>
-          <div class="col-6">
-            <app-card></app-card>
+        <div class="row" >
+          <div class="col-4" *ngFor="let index of postit">
+            <mat-card class="example-card" style="background-color:#cecece">
+              <form class="example-form">
+                <h3>กิจกรรม
+                  <span class="label label-default">New</span>
+                </h3>
+                <mat-card-content>
+                </mat-card-content>
+                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                <span> &nbsp;</span>
+                <br>
+                <div>
+                  <mat-card-content>
+                    <p>
+                      {{index.detail}} </p>
+                  </mat-card-content>
+                </div>
+                <div class="button-row">
+                  <button mat-raised-button color="accent">like</button>
+                </div>
+              </form>
+            </mat-card>
+            <br>
           </div>
         </div>
-        <!-- row -->
-
-        <!-- post side -->
         <br>
         <br>
         <br>

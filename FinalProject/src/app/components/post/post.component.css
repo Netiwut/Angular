@@ -1,13 +1,4 @@
-table{
-    width: 100%;
-}
-table, th , td{
-    border-style: solid;
-    
-}
-#table-size{
-    height: 500px;
-}
+
 .example-form {
     min-width: 150px;
     max-width: 500px;
@@ -34,3 +25,14 @@ table, th , td{
     font-size: 14px;
     width: 100%;
   }  
+
+  td, th {
+    width: 4rem;
+    height: 2rem;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+  th {
+    background: lightblue;
+    border-color: white;
+  }
