@@ -43,6 +43,10 @@ const appRoutes = [
     component: IndexComponent
   },
   {
+    path: 'mynavbe',
+    component: MyNavbeComponent
+  },
+  {
     path: 'mynav',
     component: MyNavComponent,
     children: [

@@ -8,9 +8,13 @@
     [opened]="!(isHandset | async)!.matches">
     <mat-toolbar color="primary">Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      <a mat-list-item routerLink='/' >กลับสู่หน้าหลัก</a>
+      <a mat-list-item routerLink='/mynav' >เข้าสู้หน้าหลัก</a>
+      <hr>
+      <a mat-list-item  (click)="acc.toggle('toggle-1')">ข้อมูลทั่วไป</a>
+      <a mat-list-item  (click)="acc.toggle('toggle-2')">กิจกรรมและโพส</a>
+      <a mat-list-item  (click)="acc.toggle('toggle-3')">ประมวลภาพ</a>
+      <a mat-list-item  (click)="acc.toggle('toggle-4')">องค์กรในหมู่บ้าน </a>
 
     </mat-nav-list>
   </mat-sidenav>
@@ -27,5 +31,29 @@
       <span>Application Title</span>
     </mat-toolbar>
   </mat-sidenav-content>
- 
+  <mat-sidenav-content>
+      <ngb-accordion #acc="ngbAccordion">
+          <ngb-panel id="toggle-1" title="ข้อมูลทั่วไป">
+            <ng-template ngbPanelContent>
+
+            </ng-template>
+          </ngb-panel>
+          <ngb-panel id="toggle-2" title="กิจกรรมโพส">
+            <ng-template ngbPanelContent>
+
+            </ng-template>
+          </ngb-panel>
+          <ngb-panel id="toggle-3" title="ประมวลภาพ">
+            <ng-template ngbPanelContent>
+
+            </ng-template>
+          </ngb-panel>
+          <ngb-panel id="toggle-4" title="องค์กรในหมู่บ้าน">
+            <ng-template ngbPanelContent>
+
+            </ng-template>
+          </ngb-panel>
+        </ngb-accordion>
+        <hr/>  
+      </mat-sidenav-content>
 </mat-sidenav-container>
