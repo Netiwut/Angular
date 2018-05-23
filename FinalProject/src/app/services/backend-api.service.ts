@@ -38,4 +38,13 @@ export class BackendApiService {
   editGeneral(data) {
     return this.http.put('http://localhost:3000/general', data);
   }
+  editPost(id, data) {
+    return this.http.put('http://localhost:3000/postit/' + id, data);
+  }
+  newPost(data) {
+    return this.http.post('http://localhost:3000/postit', data);
+  }
+  deletePost(id) {
+    return this.http.delete('http://localhost:3000/postit/' + id);
+  }
 }

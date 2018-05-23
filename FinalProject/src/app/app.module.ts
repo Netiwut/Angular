@@ -46,7 +46,8 @@ const appRoutes = [
   {
     path: 'mynavbe',
     component: MyNavbeComponent
-  },
+  }
+  ,
   {
     path: 'mynav',
     component: MyNavComponent,

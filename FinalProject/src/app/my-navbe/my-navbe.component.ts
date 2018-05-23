@@ -16,7 +16,11 @@ export class MyNavbeComponent implements OnInit  {
   gallery:    Gallery[];
   people:     People[];
   data:       object = [];
+  showData:   object = [];
   gen:        General[];
+  i:          number;
+  state:      boolean;
+  state2:     boolean;
   date = new FormControl(new Date());
   serializedDate = new FormControl((new Date()).toISOString());
   isHandset: Observable<BreakpointState> = this.breakpointObserver.observe(Breakpoints.Handset);
@@ -25,6 +29,8 @@ export class MyNavbeComponent implements OnInit  {
     private backendApiService: BackendApiService
   ) {}
   ngOnInit() {
+    this.state = true;
+    this.state2 = false;
     this.backendApiService.getGallery().subscribe(
       (data:  Gallery[]) => {
         this.gallery = data;
@@ -44,8 +50,51 @@ export class MyNavbeComponent implements OnInit  {
       });
   }
   saveAll() {
-    if (confirm('GetData')) {
+    if (confirm('บันทึกการเปลี่ยนแปลง')) {
       this.backendApiService.editGeneral(this.data).subscribe(data => {});
     }
+  }
+  showEdit(index) {
+    this.backendApiService.getPostit().subscribe(
+      (data:  Postit[]) => {
+        this.showData = data[index];
+        this.i = index ;
+      });
+      this.state = false;
+      this.state2 = true;
+  }
+  savePost() {
+    if (confirm('บันทึก')) {
+      this.backendApiService.editPost(this.i, this.showData).subscribe(data => {
+        this.backendApiService.getPostit().subscribe(
+          (datas:  Postit[]) => {
+            this.postit = datas;
+          });
+      });
+    }
+  }
+  newPost() {
+    if (confirm('บันทึก')) {
+      this.backendApiService.newPost(this.showData).subscribe(data => {
+        this.backendApiService.getPostit().subscribe(
+          (datas:  Postit[]) => {
+            this.postit = datas;
+          });
+      });
+    }
+  }
+  delete(index) {
+    if (confirm('ลบโพส')) {
+      this.backendApiService.deletePost(index).subscribe(data => {
+        this.backendApiService.getPostit().subscribe(
+          (datas:  Postit[]) => {
+            this.postit = datas;
+          });
+      });
+    }
+  }
+  reset() {
+    this.state = true;
+    this.state2 = false;
   }
 }
