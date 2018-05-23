@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { FormControl } from '@angular/forms';
 import { BackendApiService } from '../services/backend-api.service';
 import { General, Postit, Gallery, People } from '../models/models';
+import { isNgTemplate } from '@angular/compiler';
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'my-navbe',
@@ -15,6 +16,7 @@ export class MyNavbeComponent implements OnInit  {
   postit:     Postit[];
   gallery:    Gallery[];
   people:     People[];
+  gen:        General[];
   date = new FormControl(new Date());
   serializedDate = new FormControl((new Date()).toISOString());
   isHandset: Observable<BreakpointState> = this.breakpointObserver.observe(Breakpoints.Handset);
@@ -36,5 +38,10 @@ export class MyNavbeComponent implements OnInit  {
       (data:  Postit[]) => {
         this.postit = data;
       });
+  }
+  clearAll() {
+    if (confirm('ล้างข้อมูลกลับสู่ก่อนหน้านี้')) {
+      location.reload();
+    }
   }
 }

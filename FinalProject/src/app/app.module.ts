@@ -33,7 +33,7 @@ import { Routes, RouterModule} from '@angular/router';
 import { CardComponent } from './components/sub-components/card/card.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 import { GalleryAlbumComponent } from './components/sub-components/gallery-album/gallery-album.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { PhotoAllComponent } from './components/gallery/photo-all/photo-all.component';
 
 

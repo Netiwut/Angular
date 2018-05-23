@@ -33,6 +33,7 @@
     "ng-simple-slideshow": "^1.2.2",
     "ngx-slick-carousel": "^0.2.7",
     "rxjs": "^6.0.0",
+    "rxjs-compat": "^6.1.0",
     "slick-carousel": "^1.8.1",
     "ui-carousel": "^0.2.0",
     "zone.js": "^0.8.26"
