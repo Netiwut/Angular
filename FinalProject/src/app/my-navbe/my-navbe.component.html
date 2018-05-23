@@ -25,21 +25,23 @@
     <ngb-accordion #acc="ngbAccordion">
       <ngb-panel id="toggle-1" title="ข้อมูลทั่วไป">
         <ng-template ngbPanelContent>
-          <form class="example-form">
+          <form class="example-form"  id = "formNewGeneral" name = "formNewGeneral" #generalData = "ngForm" (ngSubmit) = "updateGeneral(generalData.value)">
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="ชื่อหมู่บ้าน" value=" {{general.name}} ">
+              <input matInput placeholder="ชื่อหมู่บ้าน" value="{{general.name}}" name="name" [(ngModel)] = "data.name" ngModel>
             </mat-form-field>
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="ชื่อผู้ใหญ่บ้าน" value=" {{general.namehead}} ">
+              <input matInput placeholder="ชื่อผู้ใหญ่บ้าน" name="namehead" value=" {{general.namehead}} " [(ngModel)] = "data.namehead" ngModel>
             </mat-form-field>
             <mat-form-field class="example-full-width">
-              <input matInput placeholder="รูปภาพ" value=" {{general.image}} ">
+              <input matInput placeholder="รูปภาพ" name="image" value=" {{general.image}} " [(ngModel)] = "data.image" ngModel>
             </mat-form-field>
             <mat-form-field class="example-full-width">
-              <textarea rows="15" matInput placeholder="ประวัติหมู่บ้าน" value=" {{general.history}} "></textarea>
+              <textarea rows="15" matInput placeholder="ประวัติหมู่บ้าน" name="history" value=" {{general.history}} " [(ngModel)] = "data.history" ngModel>
+                
+              </textarea>
             </mat-form-field>
-            <button mat-button style="color: rgb(0, 119, 73)" type="submit">Save</button>
-            <button mat-button style="color: rgb(226, 26, 0)" type="submit" (click) = "clearAll()">Cancel</button>
+            <button mat-button style="color: rgb(0, 119, 73)" type="button" (click) = "clearAll()" onClick={this.handleCancel}>Save</button>
+            <button mat-button disabled style="color: rgb(226, 26, 0)" type="button" onClick={this.handleCancel} >Cancel</button>
           </form>
         </ng-template>
       </ngb-panel>
@@ -49,9 +51,6 @@
                 <mat-form-field class="example-full-width">
                   <input matInput placeholder="ชื่อกิจกรรม หรือ โพส" value="">
                 </mat-form-field>
-                <!-- <mat-form-field class="example-full-width">
-                  <input matInput placeholder="เวลา" value="">
-                </mat-form-field> -->
                 <mat-form-field>
                   <input matInput [matDatepicker]="picker1" placeholder="Angular forms" [formControl]="date">
                   <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
@@ -63,28 +62,28 @@
                 <mat-form-field class="example-full-width">
                   <textarea matInput placeholder="รายละเอียด"></textarea>
                 </mat-form-field>
-                <button mat-button style="color: rgb(0, 119, 73)" type="submit">Save</button>
-                <button mat-button style="color: rgb(226, 26, 0)" type="submit">Cancel</button>
+                <button mat-button style="color: rgb(0, 119, 73)" type="button" onClick={this.handleCancel}>Save</button>
+                <button mat-button style="color: rgb(226, 26, 0)" type="button" onClick={this.handleCancel} (click) = "clearAll()">Cancel</button>
               </form>
               <table class="table">
                   <thead>
                     <tr>
-                      <th scope="col">#</th>
-                      <th scope="col">ชื่อกิจกรรม</th>
-                      <th scope="col">วันที่</th>
-                      <th scope="col">รายละเอียด</th>
-                      <th scope="col">รูปภาพ</th>
-                      <th scope="col">แก้ไข / ลบ</th>
+                      <th scope="col" >#</th>
+                      <th scope="col" >ชื่อกิจกรรม</th>
+                      <th scope="col" >วันที่</th>
+                      <th scope="col" >รายละเอียด</th>
+                      <th scope="col" >รูปภาพ</th>
+                      <th scope="col" style="width: 10%;text-align: center">แก้ไข / ลบ</th>
                     </tr>
                   </thead>
                   <tbody *ngFor="let post of this.postit;let i = index">
                     <tr>  
-                      <th scope="row"> {{i+1}} </th>
-                      <td> {{post.name}} </td>
-                      <td> {{post.timestamp}} </td>
-                      <td> {{post.detail}} </td>
-                      <td> {{post.url}} </td>
-                      <td  style="width: 10%;text-align: center"> 
+                      <th scope="row" style="width: 10%;text-align: right"> {{i+1}} </th>
+                      <td style="width: 20;text-align: left"> {{post.name}} </td>
+                      <td style="width: 10%;text-align: left"> {{post.timestamp}} </td>
+                      <td style="width: 40%;text-align: left"> {{post.detail}} </td>
+                      <td style="width: 10%;text-align: left"> {{post.url}} </td>
+                      <td  style="width: 10%;text-align: left"> 
                         <a href=""><i class="fas fa-edit" style="color: goldenrod">&nbsp;</i></a>
                         <a href=""><i class="fas fa-trash-alt" style="color: orangered"></i></a>
                       </td>

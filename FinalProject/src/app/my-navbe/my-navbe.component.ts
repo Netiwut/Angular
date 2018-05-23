@@ -16,6 +16,7 @@ export class MyNavbeComponent implements OnInit  {
   postit:     Postit[];
   gallery:    Gallery[];
   people:     People[];
+  data:       object = [];
   gen:        General[];
   date = new FormControl(new Date());
   serializedDate = new FormControl((new Date()).toISOString());
@@ -29,6 +30,7 @@ export class MyNavbeComponent implements OnInit  {
     this.backendApiService.getGenaral().subscribe(
       (data:  General[]) => {
         this.general = data;
+        this.data = data ;
       });
     this.backendApiService.getPeople().subscribe(
       (data:  People[]) => {
@@ -39,9 +41,12 @@ export class MyNavbeComponent implements OnInit  {
         this.postit = data;
       });
   }
+  getData() {
+  }
   clearAll() {
-    if (confirm('ล้างข้อมูลกลับสู่ก่อนหน้านี้')) {
-      location.reload();
+    if (confirm('GetData')) {
+      console.log(this.general);
+      console.log(this.data);
     }
   }
 }
