@@ -35,7 +35,7 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { GalleryAlbumComponent } from './components/sub-components/gallery-album/gallery-album.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PhotoAllComponent } from './components/gallery/photo-all/photo-all.component';
-import { AngularBasicModalModule } from 'angular-basic-modal';
+// import { AngularBasicModalModule } from 'angular-basic-modal';
 
 
 
@@ -118,7 +118,7 @@ const appRoutes = [
     MatTableModule,
     MatSelectModule,
     MatMenuModule,
-    AngularBasicModalModule ,
+    // AngularBasicModalModule ,npm
     RouterModule.forRoot(appRoutes, {
       enableTracing: true
     }),
