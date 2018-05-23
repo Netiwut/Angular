@@ -2,6 +2,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 
 <body>
@@ -9,59 +11,87 @@
     <br>
     <div class="row">
       <div class="col-10">
-        <mat-card>
-          <h1>ตารางกิจกรรม</h1>
+        <h2>ตารางกิจกรรม</h2>
 
-          <table class="table" width="100%">
-            <tr>
-              <th width="60%">กิจกรรม</th>
-              <th width="20%">เวลากิจกรรม</th>
-              <th width="20%">รายละเอียด</th>
-            </tr>
-            <tr *ngFor="let index of postit">
-              <td>
-                {{index.name}}
-              </td>
-              <td>
-                {{index.timestamp}}
-              </td>
-              <td>
-                <a href="">
-                  <!-- {{index.detail}} -->
-                  รายละเอียด
-                </a>
-              </td>
-            </tr>
-          </table>
+        <table class="table" width="100%">
+          <tr>
+            <th width="60%">กิจกรรม</th>
+            <th width="20%">เวลากิจกรรม</th>
+            <th width="20%">รายละเอียด</th>
+          </tr>
+          <tr *ngFor="let index of postit">
+            <td>
+              {{index.name}}
+            </td>
+            <td>
+              {{index.timestamp}}
+            </td>
+            <td>
 
-        </mat-card>
+              
+              
+              <a style="cursor:pointer;color:blue" (click)="openVerticallyCentered(content)">รายละเอียด</a>
 
+              <ng-template #content let-c="close" let-d="dismiss"  style="text-overflow:unset">
+
+                <div class="modal-header">
+                  <h4 class="modal-title">{{index.name}}</h4>
+                  <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>{{index.detail}}</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-light" (click)="c('Close click')">ปิด</button>
+                </div>
+              </ng-template>
+            </td>
+          </tr>
+        </table>
         <hr>
-
-        <div class="row" >
+        <div class="row">
           <div class="col-4" *ngFor="let index of postit">
             <mat-card class="example-card" style="background-color:#cecece">
               <form class="example-form">
-                <h3>กิจกรรม
+                <h3>{{index.name}}
                   <span class="label label-default">New</span>
                 </h3>
                 <mat-card-content>
                 </mat-card-content>
-                <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                <img mat-card-image src="{{index.url}}" alt="Photo of a Shiba Inu">
                 <span> &nbsp;</span>
                 <br>
                 <div>
                   <mat-card-content>
-                    <p>
+                    <p style="text-overflow: ellipsis;overflow: hidden;white-space: nowrap;">
                       {{index.detail}} </p>
                   </mat-card-content>
                 </div>
                 <div class="button-row">
-                  <button mat-raised-button color="accent">like</button>
+                    <button  mat-raised-button color="accent" class="btn btn-outline-primary mb-2 mr-2" (click)="openVerticallyCentered(content)">รายละเอียด</button>
+
                 </div>
               </form>
             </mat-card>
             <br>
+
+            <ng-template #content let-c="close" let-d="dismiss" style="margin-top:20%" style="text-overflow:unset">
+
+                <div class="modal-header">
+                  <h4 class="modal-title">{{index.name}}</h4>
+                  <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>{{index.detail}}</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-light" (click)="c('Close click')">ปิด</button>
+                </div>
+              </ng-template>
           </div>
         </div>
         <br>
@@ -76,4 +106,8 @@
       </div>
     </div>
   </div>
+
+
+
 </body>
+
