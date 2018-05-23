@@ -3,12 +3,17 @@
     [opened]="!(isHandset | async)!.matches">
     <mat-toolbar style="background-color: rgb(170, 52, 125); color: white">หมู่บ้านศรีไคออก</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="" routerLink='/mynav/home' (click)="onClick('หน้าหลัก')"><i class="fas fa-home"></i>&nbsp;&nbsp;ทั่วไป</a>
-      <a mat-list-item href="" routerLink='/mynav/post' (click)="onClick('กิจกรรมและโพส')"><i class="fas fa-bullhorn"></i>&nbsp;&nbsp;กิจกรรม/โพสต์</a>
-      <a mat-list-item herf="" routerLink="/mynav/gallery" (click)="onClick('ประมวลภาพ')"><i class="far fa-images"></i>&nbsp;&nbsp;ประมวลภาพ</a>
-      <a mat-list-item href="" routerLink='/mynav/people' (click)="onClick('องค์กรในหมู่บ้าน')"><i class="fas fa-users"></i>&nbsp;&nbsp;องค์กรในหมู่บ้าน</a>
+      <a mat-list-item href="" routerLink='/mynav/home' (click)="onClick('หน้าหลัก')">
+        <i class="fas fa-home"></i>&nbsp;&nbsp;ทั่วไป</a>
+      <a mat-list-item href="" routerLink='/mynav/post' (click)="onClick('กิจกรรมและโพส')">
+        <i class="fas fa-bullhorn"></i>&nbsp;&nbsp;กิจกรรม/โพสต์</a>
+      <a mat-list-item herf="" routerLink="/mynav/gallery" (click)="onClick('ประมวลภาพ')">
+        <i class="far fa-images"></i>&nbsp;&nbsp;ประมวลภาพ</a>
+      <a mat-list-item href="" routerLink='/mynav/people' (click)="onClick('องค์กรในหมู่บ้าน')">
+        <i class="fas fa-users"></i>&nbsp;&nbsp;องค์กรในหมู่บ้าน</a>
       <hr>
-      <a mat-list-item routerLink='/'><i class="fa fa-angle-double-left" aria-hidden="true"></i>&nbsp;&nbsp;เข้าสู้หน้าแรก</a>
+      <a mat-list-item routerLink='/'>
+        <i class="fa fa-angle-double-left" aria-hidden="true"></i>&nbsp;&nbsp;เข้าสู้หน้าแรก</a>
 
     </mat-nav-list>
   </mat-sidenav>
@@ -22,9 +27,10 @@
       </span>
     </mat-toolbar>
   </mat-sidenav-content>
-  <mat-sidenav-content >
-      <router-outlet></router-outlet>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
 
-      <!-- <app-gallery></app-gallery> -->
+    <!-- <app-gallery></app-gallery> -->
   </mat-sidenav-content>
 </mat-sidenav-container>
+
