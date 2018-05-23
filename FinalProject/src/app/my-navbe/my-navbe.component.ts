@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { FormControl } from '@angular/forms';
 import { BackendApiService } from '../services/backend-api.service';
 import { General, Postit, Gallery, People } from '../models/models';
-import { isNgTemplate } from '@angular/compiler';
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'my-navbe',
@@ -21,7 +20,10 @@ export class MyNavbeComponent implements OnInit  {
   date = new FormControl(new Date());
   serializedDate = new FormControl((new Date()).toISOString());
   isHandset: Observable<BreakpointState> = this.breakpointObserver.observe(Breakpoints.Handset);
-  constructor(private breakpointObserver: BreakpointObserver, private backendApiService: BackendApiService) {}
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private backendApiService: BackendApiService
+  ) {}
   ngOnInit() {
     this.backendApiService.getGallery().subscribe(
       (data:  Gallery[]) => {
@@ -41,12 +43,9 @@ export class MyNavbeComponent implements OnInit  {
         this.postit = data;
       });
   }
-  getData() {
-  }
-  clearAll() {
+  saveAll() {
     if (confirm('GetData')) {
-      console.log(this.general);
-      console.log(this.data);
+      this.backendApiService.editGeneral(this.data).subscribe(data => {});
     }
   }
 }

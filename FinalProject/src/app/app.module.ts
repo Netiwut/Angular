@@ -35,12 +35,14 @@ import { GalleryComponent } from './components/gallery/gallery.component';
 import { GalleryAlbumComponent } from './components/sub-components/gallery-album/gallery-album.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { PhotoAllComponent } from './components/gallery/photo-all/photo-all.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const appRoutes = [
   {
     path: '',
     component: IndexComponent
-  },
+  }
+  ,
   {
     path: 'mynavbe',
     component: MyNavbeComponent
@@ -72,6 +74,10 @@ const appRoutes = [
         component: PeopleComponent
       }
     ]
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
   }
 ];
 
@@ -89,7 +95,8 @@ const appRoutes = [
     GalleryAlbumComponent,
     IndexComponent,
     CardComponent,
-    PhotoAllComponent
+    PhotoAllComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
