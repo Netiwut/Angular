@@ -3,9 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/observable';
 import { Response, Headers } from '@angular/http';
 import { General } from './../models/models';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/filter';
-import 'rxjs/add/operator/map';
 
 @Injectable({
   providedIn: 'root'

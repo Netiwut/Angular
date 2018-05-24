@@ -27,13 +27,8 @@
               {{index.timestamp}}
             </td>
             <td>
-
-              
-              
               <a style="cursor:pointer;color:blue" (click)="openVerticallyCentered(content)">รายละเอียด</a>
-
               <ng-template #content let-c="close" let-d="dismiss"  style="text-overflow:unset">
-
                 <div class="modal-header">
                   <h4 class="modal-title">{{index.name}}</h4>
                   <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
